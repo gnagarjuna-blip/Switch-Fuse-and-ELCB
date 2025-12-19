@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEE/IEE Interactive Study Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 95%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            margin-bottom: 20px;
+        }
+        header h1 { color: #007bff; }
+
+        .qa-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #fafafa;
+        }
+
+        /* Button Styles */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .step-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            flex: 1;
+            min-width: 120px;
+            transition: 0.3s;
+        }
+        .step-btn:hover { background-color: #0056b3; }
+        
+        /* Hidden content sections */
+        .step-content {
+            display: none;
+            padding: 15px;
+            margin-top: 5px;
+            background-color: #fff;
+            border-left: 4px solid #28a745;
+            border-bottom: 1px solid #eee;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>BEE/IEE Interactive Q&A</h1>
+        <p>Electrical Protection Devices</p>
+    </header>
+
+    <div class="qa-section">
+        <h2>Protection Devices</h2>
+        <p><strong>Question:</strong> Explain about i) Switch Fuse Unit (SFU) and ii) ELCB with neat sketches.</p>
+
+        <div class="btn-group">
+            <button class="step-btn" onclick="toggleStep('given4')">Topic Intro</button>
+            <button class="step-btn" onclick="toggleStep('required4')">Components</button>
+            <button class="step-btn" onclick="toggleStep('formula4')">Working Principle</button>
+            <button class="step-btn" onclick="toggleStep('solution4')">Detailed Explanation</button>
+        </div>
+
+        <div id="given4" class="step-content">
+            <strong>Introduction:</strong><br>
+            <strong>i) Switch Fuse Unit (SFU):</strong> It is a combination of a switch and a fuse unit used for manual switching and protection of electrical circuits against overcurrent and short circuits.<br><br>
+            <strong>ii) Earth Leakage Circuit Breaker (ELCB):</strong> It is a safety device used in electrical installations with high Earth impedance to prevent shock by detecting small stray voltages on the metal enclosures of electrical equipment.
+        </div>
+
+        <div id="required4" class="step-content">
+            <strong>Main Components:</strong><br>
+            <strong>For SFU:</strong><br>
+            * Enclosure (Box)<br>
+            * Operating Handle<br>
+            * Moving Contacts & Fixed Contacts<br>
+            * HRC (High Rupturing Capacity) Fuses<br><br>
+            <strong>For ELCB:</strong><br>
+            * Trip Coil<br>
+            * Test Button<br>
+            * Current Sensing Transformer (in Voltage-ELCB)
+        </div>
+
+        <div id="formula4" class="step-content">
+            <strong>Working Mechanism:</strong><br>
+            <strong>SFU:</strong> When the handle is turned 'ON', the contacts close and power flows through the fuse. If current exceeds the fuse rating, the fuse wire melts, breaking the circuit.<br><br>
+            <strong>ELCB:</strong> It monitors the balance of current between the Phase and Neutral. If a leakage occurs (current flows to Earth), the balance is disturbed, creating a magnetic field that triggers the trip coil to open the circuit.
+        </div>
+
+        <div id="solution4" class="step-content">
+            <strong>i) Switch Fuse Unit (SFU):</strong><br>
+            The SFU is primarily used for low-voltage applications. It provides a means of manual isolation (the switch) and automatic protection (the fuse). It is widely used in industrial distribution boards for motor feeders and main incomers.<br><br>
+            
+            <strong>ii) Earth Leakage Circuit Breaker (ELCB):</strong><br>
+            The primary purpose of an ELCB is to detect "Earth Leakage." There are two types:
+            <ul>
+                <li><strong>Voltage ELCB:</strong> Detects a rise in potential on the equipment body.</li>
+                <li><strong>Current ELCB (RCCB):</strong> Detects the difference between outgoing and incoming current.</li>
+            </ul>
+            If a person touches a faulty appliance, the leakage current is detected within milliseconds (usually 30mA), and the ELCB trips the power to save lives.
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleStep(id) {
+        const element = document.getElementById(id);
+        if (element.style.display === "block") {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
